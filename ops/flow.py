@@ -83,7 +83,7 @@ class InsIfUnspecified(Instruction, Pretty):
         else:
             block = self._else_block
         br = block.run(vm)
-        if br.depth == 0 and br.is_continue:
+        if br is not None and br.depth == 0 and br.is_continue:
             raise ValueError('Cannot continue if/else/end block')
         return br
 
