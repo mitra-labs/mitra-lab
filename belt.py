@@ -2,10 +2,12 @@ import functools
 from enum import Enum
 from typing import Optional, Union, NamedTuple, List
 
+from pretty import Pretty
+
 BeltItem = Union['BeltSlice', 'BeltNum']
 
 
-class Belt:
+class Belt(Pretty):
     SIZE = 16
 
     def __init__(self):
